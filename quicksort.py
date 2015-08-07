@@ -41,3 +41,13 @@ def partition_hoare(array, start, end):
             return i
         else:
             array[i], array[j] = array[j], array[i]
+
+if __name__ == '__main__':
+    import numpy as np
+    from random import shuffle
+    print 'test with random list of integers and floats...'
+    test = list(np.random.randint(-50, 50, 500)) + list(np.random.uniform(-50, 50, 500))
+    shuffle(test)
+    control = sorted(test)
+    qsort(test)
+    print 'control == test:', control == test
